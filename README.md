@@ -3,3 +3,4 @@ Integrantes:
 -Dorival Pichamba
 -Misael Cabascango
 -Wendy German 
+-Diego Osorio
