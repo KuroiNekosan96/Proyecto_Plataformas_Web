@@ -1,0 +1,6 @@
+{
+    "main": "MAIN.js",
+    "dependencies": {
+        "csv-parse": "4.2.0"
+    }
+}
