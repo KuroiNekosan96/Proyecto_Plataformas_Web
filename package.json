@@ -1,6 +1,7 @@
 {
     "main": "MAIN.js",
     "dependencies": {
-        "csv-parse": "4.2.0"
+        "csv-parse": "4.2.0",
+        "csvtojson": "^2.0.10"
     }
 }

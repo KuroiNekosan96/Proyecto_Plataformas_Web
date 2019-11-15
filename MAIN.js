@@ -6,6 +6,7 @@
 //     var dataArray = data.split(/\r?\n/);
 //     console.log(dataArray);
 // });
+// ds = []
 const csv = require('csv-parser');
 const fs = require('fs');
 
@@ -18,9 +19,10 @@ fs.createReadStream(filepath)
 
 .pipe(csv())
     .on('data', (row) => {
-        console.log(row);
+        //console.log(row);
     })
 
 .on('end', () => {
     // handle end of CSV
 })
+console.log(row);
