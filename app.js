@@ -1,14 +1,35 @@
-const http = require('http');
+const fs = require('fs');
+const chalk = require('chalk');
+const { argv } = require('./config/yargs.js')
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const { leer, Datos } = require('./metodos/lecturacsv.js');
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World\n');
-});
+let comando = argv._[0]
+console.log(comando)
+switch (comando) {
+    case 'publicar':
+        leer(argv.file)
+            .then(archivo => {
+                Datos(archivo, argv.year, argv.country).then(archivo2 => {
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+                    console.log(chalk.blue(archivo2))
+                }).catch((err) => console.log("error: ", err))
+            }).catch((err) => console.log("error: ", err))
+        break;
+    case 'guardar':
+        leer(argv.file)
+            .then(archivo => {
+                Datos(archivo, argv.year, argv.country).then(archivo2 => {
+                    fs.writeFile(`./archivos/${argv.country}-${argv.year}.txt`, `${archivo2}`, error => {
+                        if (error)
+                            console.log(error);
+                        else
+                            console.log(chalk.green('El archivo fue creado'));
+                        console.log(chalk.blue(archivo2));
+                    });
+                }).catch((err) => console.log("error: ", err))
+            }).catch((err) => console.log("error: ", err))
+        break;
+    default:
+        console.log('Comando no valido!')
+};

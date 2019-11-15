@@ -34,7 +34,6 @@ let publicar = (file, country, year) => {
 }
 
 module.exports = {
-    //Se puede dar un nombre de propiedad por ejemplo crearArchivo: crearArchivo
     guardar,
     publicar
 };
