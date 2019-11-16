@@ -28,7 +28,7 @@ let optg = {
     year: {
         alias: `y`,
         default: 2018,
-        description: 'Permite especificar el año para el cual se requiere las estadísticas.'
+        description: 'Permite especificar el año para el cual se requiere las estadísticas. Por defecto, 2018.'
     },
     out: {
         alias: `o`,
