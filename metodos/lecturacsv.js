@@ -17,35 +17,32 @@ let Datos = (datos, año, pais) => {
     return new Promise((resolve, reject) => {
 
         var dist = datos[4].split(",")
-
         var pos1 = 0
 
-        for (var i = 0; i < dist.length; i++) {
-            var limit = dist[i]
+        let entero = (cadena) => parseInt(cadena.substring(1, cadena.length - 1))
 
-            if (parseInt(dist[i].substring(1, limit.length - 1), 10) == año) {
+        for (var i = 0; i < dist.length; i++) {
+
+            if (entero(dist[i]) == año) {
 
                 var pos1 = i
             }
         }
-        limite = 33
-        let data = '';
-        for (var i = 4; i < datos.length; i++) {
-            try {
 
+        let data = '';
+        for (var i = 5; i < datos.length; i++) {
+            try {
                 var datos2 = datos[i].split(",")
                 var datos3 = datos2[1].substring(1, 4)
-
                 if (datos3 == pais) {
-                    limit2 = datos2[pos1].length - 2
-                    var numero = datos2[pos1].substring(2, limit2)
+                    var numero = entero(datos2[pos1])
                     data += "Nombre pais:\t" + datos2[0].substring(1, 10) + "\n";
-                    data += "Numeros de subscripciones:\t" + datos2[pos1].substring(2, limit2) + "\n";
+                    data += "Numero de subscripciones:\t" + numero + "\n";
+
                 }
             } catch (err) {
 
             }
-
         }
         var num = 0
         var cont = 0
@@ -56,9 +53,9 @@ let Datos = (datos, año, pais) => {
         for (var i = 5; i < datos.length; i++) {
             var datos5 = datos[i].split(",")
             try {
-                limite2 = datos5[pos1].length - 2
-                if ((!isNaN(parseInt(datos5[pos1].substring(2, limite2), 10))) && (parseInt(datos5[pos1].substring(2, limite2), 10) != 0)) {
-                    num += parseInt(datos5[pos1].substring(2, limite2), 10)
+
+                if ((!isNaN(entero(datos5[pos1]))) && (entero(datos5[pos1]) != 0)) {
+                    num += entero(datos5[pos1])
                     cont += 1
                     listop5.push(num)
                     dictop5[datos5[0].substring(1, datos5[0].length - 1)] = num
@@ -79,7 +76,7 @@ let Datos = (datos, año, pais) => {
         media = Math.round(num / cont)
         data += "Media de subcripciones:\t" + media + "\n"
         if (media > numero) {
-            data += "La media de subscripciones:\t" + media + " es mas alta que el numero de subcripcioes: \t" + numero + "\n"
+            data += "La media de subscripciones:\t" + media + " es mas alta que el numero de subcripciones: \t" + numero + "\n"
         } else {
             data += "El numero de subscripciones \t" + numero + " es mas alta que la media de subscripciones: \t" + media + "\n"
         }
@@ -104,10 +101,6 @@ let Datos = (datos, año, pais) => {
         resolve(data)
     });
 };
-
-
-
-
 
 module.exports = {
     leer,
