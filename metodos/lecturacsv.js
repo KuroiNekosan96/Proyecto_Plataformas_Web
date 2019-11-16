@@ -35,10 +35,13 @@ let Datos = (datos, año, pais) => {
                 var datos2 = datos[i].split(",")
                 var datos3 = datos2[1].substring(1, 4)
                 if (datos3 == pais) {
-                    var numero = entero(datos2[pos1])
                     data += "Nombre pais:\t" + datos2[0].substring(1, 10) + "\n";
-                    data += "Numero de subscripciones:\t" + numero + "\n";
-
+                    var numero = entero(datos2[pos1])
+                    if (!Number(numero)) {
+                        data += "No existen subscripciones en \t" + año + "\n";
+                    } else {
+                        data += "Numero de subscripciones:\t" + numero + "\n";
+                    }
                 }
             } catch (err) {
 
@@ -54,7 +57,7 @@ let Datos = (datos, año, pais) => {
             var datos5 = datos[i].split(",")
             try {
 
-                if ((!isNaN(entero(datos5[pos1]))) && (entero(datos5[pos1]) != 0)) {
+                if (!isNaN(entero(datos5[pos1]))) {
                     num += entero(datos5[pos1])
                     cont += 1
                     listop5.push(num)
@@ -73,6 +76,7 @@ let Datos = (datos, año, pais) => {
         lis5num = lis5num.slice(lis5num - 5)
         listop5 = listop5.sort()
         listop5 = listop5.slice(listop5.length - 5)
+
         media = Math.round(num / cont)
         data += "Media de subcripciones:\t" + media + "\n"
         if (media > numero) {
@@ -98,6 +102,7 @@ let Datos = (datos, año, pais) => {
 
             }
         }
+
         resolve(data)
     });
 };
