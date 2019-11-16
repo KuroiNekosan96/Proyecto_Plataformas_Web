@@ -2,11 +2,12 @@ let opt = {
     file: {
         demand: true,
         alias: `f`,
-        description: `La ruta del archivo csv`
+        description: `Permite establecer el path del archivo CSV que
+        contiene los datos a analizar`
     },
     country: {
         alias: `c`,
-        description: 'Pais al que se le va analizar'
+        description: 'Permite determinar el país a analizar a través de su código'
     },
     year: {
         alias: `y`,
