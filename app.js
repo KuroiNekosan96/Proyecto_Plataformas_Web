@@ -1,5 +1,5 @@
 const fs = require('fs');
-const chalk = require('chalk');
+const colors = require('colors');
 const { argv } = require('./config/yargs.js')
 
 const { leer, Datos } = require('./metodos/lecturacsv.js');
@@ -12,9 +12,9 @@ switch (comando) {
             .then(archivo => {
                 Datos(archivo, argv.year, argv.country).then(archivo2 => {
 
-                    console.log(chalk.blue(archivo2))
-                }).catch((err) => console.log("error: ", err))
-            }).catch((err) => console.log("error: ", err))
+                    console.log(archivo2.yellow)
+                }).catch((err) => console.log("error: ", err.red))
+            }).catch((err) => console.log("error: ", err.red))
         break;
     case 'guardar':
         leer(argv.file)
@@ -22,13 +22,13 @@ switch (comando) {
                 Datos(archivo, argv.year, argv.country).then(archivo2 => {
                     fs.writeFile(`./archivos/${argv.country}-${argv.year}.txt`, `${archivo2}`, error => {
                         if (error)
-                            console.log(error);
+                            console.log(error.red);
                         else
-                            console.log(chalk.green('El archivo fue creado'));
-                        console.log(chalk.blue(archivo2));
+                            console.log('El archivo fue creado'.green);
+                        console.log(archivo2.blue);
                     });
-                }).catch((err) => console.log("error: ", err))
-            }).catch((err) => console.log("error: ", err))
+                }).catch((err) => console.log("error: ", err.red))
+            }).catch((err) => console.log("error: ", err.red))
         break;
     default:
         console.log('Comando no valido!')

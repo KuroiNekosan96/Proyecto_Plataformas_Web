@@ -4,6 +4,7 @@
 ## -Misael Cabascango
 ## -Wendy German 
 ## -Diego Osorio
+## -Jefferson Yanqui
 
 
 ## El primer comando es publicar. Este comando publicará las estadísticas en una página web básica. Se requieren de tres parámetros:

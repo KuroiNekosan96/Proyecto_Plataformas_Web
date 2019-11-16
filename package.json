@@ -2,8 +2,12 @@
     "main": "MAIN.js",
     "dependencies": {
         "chalk": "^3.0.0",
+        "colors": "^1.4.0",
         "csv-parse": "4.2.0",
         "csvtojson": "^2.0.10",
         "yargs": "^14.2.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.4"
     }
 }

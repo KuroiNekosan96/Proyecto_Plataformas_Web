@@ -1,5 +1,5 @@
 const fs = require('fs');
-//cre una variable que se llame data
+//crea una variable que se llame data
 let guardar = (file, country, year, name) => {
     return new Promise((resolve, reject) => {
         if (!Number(year)) {
