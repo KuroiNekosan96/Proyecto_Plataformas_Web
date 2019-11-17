@@ -1,12 +1,5 @@
 const fs = require('fs');
-<<<<<<< HEAD
-=======
-var express = require('express')
-var bodyParser = require('body-parser');
-var app = express();
-
-var urlencodeParser = bodyParser.urlencoded({ extended: false });
->>>>>>> 25f08e38842e4c6c6bb23157416d9ed0380bf6ba
+const http = require('http');
 
 let leer = (url) => {
     return new Promise((resolve, reject) => {
@@ -59,37 +52,22 @@ let Datos = (datos, año, pais) => {
                     var ta = datos2[0].length
                     Npa = datos2[0].substring(1, ta)
 
-<<<<<<< HEAD
                     data += "</br></br><center> <h2 class=" + '"' + "page-section-heading text-center text-uppercase text-secondary mb-0" + '"' + "> PROYECTO PLATAFORMAS WEB </h2></center > </br> ";
 
                     data += "</br><center><h3>" + Npa + "</h3></center></br></br>";
-=======
-                    //Para darle forma al html podríamos agregar esto a los mensajes pero el problema es al momento de guardar
-                    data += "<center>=============PROYECTO PLATAFORMAS WEB=============</center>\n";
-                    data += "<center>      =============" + Npa + "=============</center>\n";
->>>>>>> 25f08e38842e4c6c6bb23157416d9ed0380bf6ba
                     var numero = entero(datos2[pos1])
                     if (!Number(numero)) {
                         reject("No existen suscripciones en el año " + año + "\n");
                         return;
 
                     } else {
-<<<<<<< HEAD
                         data += "<center><h5>Valor de la suscripcion: " + numero + "</h5></center>\n";
-=======
-                        data += "<center>Valor de la subscripcion " + numero + "</center>\n";
->>>>>>> 25f08e38842e4c6c6bb23157416d9ed0380bf6ba
                     }
                 }
             } catch (err) {
 
             }
         }
-
-        app.post(data, urlencodeParser, function(req, res) {
-            console.log(req.body);
-            res.render(data, { qs: req.query });
-        });
 
         var num = 0
         var cont = 0
@@ -188,4 +166,4 @@ let Datos = (datos, año, pais) => {
 module.exports = {
     leer,
     Datos
-}
+};
