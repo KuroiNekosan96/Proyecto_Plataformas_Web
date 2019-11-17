@@ -32,6 +32,7 @@ switch (comando) {
 
 
             }).catch((err) => console.log("error: ", err.red))
+
         }).catch((err) => console.log("error: ", err.red))
 
 

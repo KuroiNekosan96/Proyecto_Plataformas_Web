@@ -1,0 +1,21 @@
+</br></br><center> <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> PROYECTO PLATAFORMAS WEB </h2></center > </br> </br><center><h3>El mundo árabe"</h3></center></br></br><center><h5>Valor de la suscripcion: 417212258</h5></center>
+</br><center><h6>La Media Mundial es: 314864014 del año 2016</h6></center>
+</br><center><h6>El mundo árabe" tiene: 417212258 mas suscripciones que la media mundial: 314864014</h6></center></br></br><table align="center" width="400" border="2"><tr><td><center><h6>Pais</h6></center></td><td><center><h6>Suscripcion</h6></center></td></tr><center><h5>
+Paises por debajo de la media de El mundo árabe"</h5></center></br><tr> <td ><center>Afganistán</center></td> <td><center>795681033 </center></td></tr>
+<tr> <td ><center>Angola</center></td> <td><center>795903961 </center></td></tr>
+<tr> <td ><center>Albania</center></td> <td><center>795967852 </center></td></tr>
+<tr> <td ><center>Andorra</center></td> <td><center>806074068 </center></td></tr>
+</table></br><table align="center" width="400" border="2"><tr><td><center><h6>Pais</h6></center></td><td><center><h6>Suscripcion</h6></center></td></tr><center><h5>
+Paises por encima de la media de El mundo árabe"</h5></center></br><tr> <td ><center>Brasil</center></td> <td><center>795681033 </center></td></tr>
+<tr> <td ><center>Barbados</center></td> <td><center>795903961 </center></td></tr>
+<tr> <td ><center>Brunei Darussalam</center></td> <td><center>795967852 </center></td></tr>
+<tr> <td ><center>Bhután</center></td> <td><center>806074068 </center></td></tr>
+<tr> <td ><center>Botswana</center></td> <td><center>8225795843 </center></td></tr>
+</table></br><table align="center" width="400" border="2"><tr><td><center><h6>Pais</h6></center></td><td><center><h6>Suscripcion</h6></center></td></tr>
+<center><h5>Los 5 paises con mas suscripciones del 2016</h5></center></br>
+<tr> <td ><center>Belarús</center></td> <td><center>795681033 </center></td></tr>
+<tr> <td ><center>Belice</center></td> <td><center>795903961 </center></td></tr>
+<tr> <td ><center>Bermudas</center></td> <td><center>795967852 </center></td></tr>
+<tr> <td ><center>Bolivia</center></td> <td><center>806074068 </center></td></tr>
+<tr> <td ><center>inicial del dividendo demográfico</center></td> <td><center>8225795843 </center></td></tr>
+</table></br>
