@@ -1,4 +1,8 @@
 const fs = require('fs');
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
 
 let leer = (url) => {
     return new Promise((resolve, reject) => {
@@ -41,18 +45,23 @@ let Datos = (datos, año, pais) => {
         let data = '';
         for (var i = 5; i < datos.length; i++) {
 
+
             try {
                 var datos2 = datos[i].split(",")
                 var datos3 = datos2[1].substring(1, 4)
 
+
                 if (datos3 == pais) {
                     var ta = datos2[0].length
                     Npa = datos2[0].substring(1, ta)
+
                     data += "=============PROYECTO PLATAFORMAS WEB=============\n";
                     data += "      =============" + Npa + "=============\n";
                     var numero = entero(datos2[pos1])
                     if (!Number(numero)) {
-                        data += "No existen subscripciones en el año" + año + "\n";
+                        reject("No existen subscripciones en el año " + año + "\n");
+                        return;
+
                     } else {
                         data += "Valor de la subscripcion " + numero + "\n";
                     }
@@ -138,6 +147,7 @@ let Datos = (datos, año, pais) => {
         resolve(data)
     });
 };
+
 
 module.exports = {
     leer,

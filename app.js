@@ -9,6 +9,21 @@ switch (comando) {
     case 'publicar':
         leer(argv.file).then(archivo => {
             Datos(archivo, argv.year, argv.country).then(archivo2 => {
+                const http = require('http');
+
+                const hostname = '127.0.0.2';
+                const port = 3000;
+
+                const server = http.createServer((req, res) => {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end(archivo2.yellow);
+                });
+
+                server.listen(port, hostname, () => {
+                    console.log(`Server running at http://${hostname}:${port}/`);
+                });
+
                 console.log(archivo2.yellow)
             }).catch((err) => console.log("error: ", err.red))
         }).catch((err) => console.log("error: ", err.red))

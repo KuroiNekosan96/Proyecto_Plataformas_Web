@@ -32,6 +32,7 @@ let optg = {
         description: 'Permite especificar el año para el cual se requiere las estadísticas. Por defecto, 2018.'
     },
     out: {
+        demand: true,
         alias: `o`,
         description: `Establece el nombre del archivo donde se almacenrá los resultados.`
     }
