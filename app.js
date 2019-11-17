@@ -10,20 +10,22 @@ switch (comando) {
         leer(argv.file).then(archivo => {
             Datos(archivo, argv.year, argv.country).then(archivo2 => {
                 const http = require('http'),
-                
-                fs = require('fs');
-                
-                fs.readFile('./index.html', function (err, html) {
+
+
+                    fs = require('fs');
+
+                fs.readFile('./index.html', function(err, html) {
                     if (err) {
-                        throw err; 
-                    }       
-                    http.createServer(function(request, response) {  
-                        response.writeHeader(200, {"Content-Type": "text/html"});  
-                        response.write(html);  
-                        response.end(archivo2);  
+                        throw err;
+                    }
+                    http.createServer(function(request, response) {
+                        response.writeHeader(200, { "Content-Type": "text/html" });
+                        response.write(html);
+                        response.end(archivo2);
                     }).listen(3000);
-                    console.log('El servidor esta funcionando correctamente');
+                    console.log('El servidor esta funcionando correctamente http://localhost:3000/');
                 });
+                console.log(archivo2.yellow);
 
 
             }).catch((err) => console.log("error: ", err.red))

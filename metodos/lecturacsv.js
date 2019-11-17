@@ -1,8 +1,4 @@
 const fs = require('fs');
-const http = require('http');
-
-const hostname = '127.0.0.1';
-const port = 3000;
 
 let leer = (url) => {
     return new Promise((resolve, reject) => {
@@ -55,15 +51,16 @@ let Datos = (datos, año, pais) => {
                     var ta = datos2[0].length
                     Npa = datos2[0].substring(1, ta)
 
-                    data += "=============PROYECTO PLATAFORMAS WEB=============\n";
-                    data += "      =============" + Npa + "=============\n";
+                    data += "</br></br><center> <h2 class=" + '"' + "page-section-heading text-center text-uppercase text-secondary mb-0" + '"' + "> PROYECTO PLATAFORMAS WEB </h2></center > </br> ";
+
+                    data += "</br><center><h3>" + Npa + "</h3></center></br></br>";
                     var numero = entero(datos2[pos1])
                     if (!Number(numero)) {
-                        reject("No existen subscripciones en el año " + año + "\n");
+                        reject("No existen suscripciones en el año " + año + "\n");
                         return;
 
                     } else {
-                        data += "Valor de la subscripcion " + numero + "\n";
+                        data += "<center><h5>Valor de la suscripcion: " + numero + "</h5></center>\n";
                     }
                 }
             } catch (err) {
@@ -109,40 +106,52 @@ let Datos = (datos, año, pais) => {
         listop5 = listop5.slice(listop5.length - 5)
 
         media = Math.round(num / cont)
-        data += "Media Mundial " + media + " del año " + año + "\n"
+        data += "</br><center><h6>La Media Mundial es: " + media + " del año " + año + "</h6></center>\n"
         if (media > numero) {
-            data += "La media de mundial: " + media + " es mas alta que el numero de subcripciones:" + numero + " de " + Npa + "\n"
+            data += "</br><h6><center>La media mundial: " + media + " es mas alta que el numero de suscripciones:" + numero + " de " + Npa + "</center></p>\n"
         } else {
-            data += "El numero de subscripciones de " + Npa + ": " + numero + " es mas alta que la media de mundial: " + media + "\n"
+            data += "</br><center><h6>" + Npa + " tiene: " + numero + " mas suscripciones que la media mundial: " + media + "</h6></center></br></br>"
         }
-        data += "\nPaises por debajo de la media de " + Npa + "\n"
+        data += "<table align=" + '"' + "center" + '"' + " width=" + '"' + "400" + '"' + " border=" + '"' + "2" + '"' +
+            "><tr><td><center><h6>Pais</h6></center></td><td><center><h6>Suscripcion</h6></center></td></tr>";
+
+        data += "<center><h5>\nPaises por debajo de la media de " + Npa + "</h5></center></br>"
         for (key in dicnum5) {
             for (var i = 0; i < 5; i++) {
                 if (dicnum5[key] == lis5num[i]) {
-                    data += key + " con " + lis5num[i] + " suscripciones\n"
+                    data += "<tr> <td ><center>" + key + "</center></td> <td><center>" + listop5[i] + " </center></td></tr>\n"
                 }
 
             }
         }
-        data += "\nPaises por encima de la media de " + Npa + "\n"
+        data += "</table></br>";
+        data += "<table align=" + '"' + "center" + '"' + " width=" + '"' + "400" + '"' + " border=" + '"' + "2" + '"' +
+            "><tr><td><center><h6>Pais</h6></center></td><td><center><h6>Suscripcion</h6></center></td></tr>";
+
+        data += "<center><h5>\nPaises por encima de la media de " + Npa + "</h5></center></br>"
         for (key in dicnum5M) {
             for (var i = 0; i < 5; i++) {
                 if (dicnum5M[key] == lis5numM[i]) {
-                    data += key + " con " + lis5numM[i] + " suscripciones\n"
+                    data += "<tr> <td ><center>" + key + "</center></td> <td><center>" + listop5[i] + " </center></td></tr>\n"
                 }
 
             }
         }
+        data += "</table></br>";
+        data += "<table align=" + '"' + "center" + '"' + " width=" + '"' + "400" + '"' + " border=" + '"' + "2" + '"' +
+            "><tr><td><center><h6>Pais</h6></center></td><td><center><h6>Suscripcion</h6></center></td></tr>";
 
-        data += "\nLos 5 paises con mas suscripciones del " + año + "\n"
+        data += "\n<center><h5>Los 5 paises con mas suscripciones del " + año + "</h5></center></br>\n"
         for (key in dictop5) {
             for (var i = 0; i < 5; i++) {
                 if (dictop5[key] == listop5[i]) {
-                    data += key + " con " + listop5[i] + " suscripciones\n"
+                    data += "<tr> <td ><center>" + key + "</center></td> <td><center>" + listop5[i] + " </center></td></tr>\n"
                 }
 
             }
+
         }
+        data += "</table></br>";
 
         resolve(data)
     });
