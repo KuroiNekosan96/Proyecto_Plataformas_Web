@@ -1,18 +1,24 @@
+mensaje1 = `Permite establecer el path del archivo CSV que
+contiene los datos a analizar`
+
+mensaje2 = 'Permite determinar el país a analizar a través de su código'
+
+mensaje3 = 'Permite especificar el año para el cual se requiere las estadísticas.'
+
 let opt = {
     file: {
         demand: true,
         alias: `f`,
-        description: `Permite establecer el path del archivo CSV que
-        contiene los datos a analizar`
+        description: mensaje1
     },
     country: {
         alias: `c`,
-        description: 'Permite determinar el país a analizar a través de su código'
+        description: mensaje2
     },
     year: {
         alias: `y`,
         default: 2018,
-        description: 'Permite especificar el año para el cual se requiere las estadísticas.'
+        description: mensaje3
     }
 }
 
@@ -20,27 +26,27 @@ let optg = {
     file: {
         demand: true,
         alias: `f`,
-        description: `La ruta del archivo csv`
+        description: mensaje1
     },
     country: {
         alias: `c`,
-        description: 'Pais al que se le va analizar'
+        description: mensaje2
     },
     year: {
         alias: `y`,
         default: 2018,
-        description: 'Permite especificar el año para el cual se requiere las estadísticas. Por defecto, 2018.'
+        description: mensaje3
     },
     out: {
         demand: true,
         alias: `o`,
-        description: `Establece el nombre del archivo donde se almacenrá los resultados.`
+        description: 'Establece el nombre del archivo donde se almacenará los resultados.'
     }
 }
 
 const argv = require('yargs')
-    .command('publicar', 'publicar los datos estaditicos', opt)
-    .command('guardar', 'Guarda los datos del pais en txt', optg)
+    .command(`publicar`, `publicará las estadísticas`, opt)
+    .command(`guardar`, `Guarda los datos del pais en txt`, optg)
     .help()
     .argv;
 
