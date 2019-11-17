@@ -26,11 +26,38 @@ los resultados.
 ### Pre-requisitos 📋
 
 ### Instalación 🔧
-
+Ejecutar el comando siguientes:
+-npm install yargs (instalacion yargs)
+-npm install colors(instalacion de los colores)
+-npm install file-system --save(instalacion Fs)
 ## Ejecutando las pruebas ⚙️
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+_guardar_
+Para ver los comandos de guardar ejecutar:
+```
+node app.js guardar -h
+```
+Nos indicara los siguientes comandos
+```
+Guarda los datos del pais en txt
 
+Opciones:
+  --version      Muestra número de versión                            [booleano]
+  --help         Muestra ayuda                                        [booleano]
+  --file, -f     La ruta del archivo csv                             [requerido]
+  --country, -c  Pais al que se le va analizar
+  --year, -y     Permite especificar el año para el cual se requiere las
+                 estadísticas. Por defecto, 2018.                [defecto: 2018]
+  --out, -o      Establece el nombre del archivo donde se almacenrá los
+                 resultados.
+
+Falta argumento requerido: file
+```
+para crear un archivo digitamos
+```
+node app.js guardar -f DATASET.csv -c ARB -y 2016 -o eje
+```
+Se creara un archivo txt en la carpeta archivos
 ### Analice las pruebas end-to-end 🔩
 
 _Explica que verifican estas pruebas y por qué_
