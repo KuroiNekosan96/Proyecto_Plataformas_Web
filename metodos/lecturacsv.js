@@ -1,8 +1,9 @@
 const fs = require('fs');
-const http = require('http');
+var express = require('express')
+var bodyParser = require('body-parser');
+var app = express();
 
-const hostname = '127.0.0.1';
-const port = 3000;
+var urlencodeParser = bodyParser.urlencoded({ extended: false });
 
 let leer = (url) => {
     return new Promise((resolve, reject) => {
@@ -55,21 +56,28 @@ let Datos = (datos, año, pais) => {
                     var ta = datos2[0].length
                     Npa = datos2[0].substring(1, ta)
 
-                    data += "=============PROYECTO PLATAFORMAS WEB=============\n";
-                    data += "      =============" + Npa + "=============\n";
+                    //Para darle forma al html podríamos agregar esto a los mensajes pero el problema es al momento de guardar
+                    data += "<center>=============PROYECTO PLATAFORMAS WEB=============</center>\n";
+                    data += "<center>      =============" + Npa + "=============</center>\n";
                     var numero = entero(datos2[pos1])
                     if (!Number(numero)) {
                         reject("No existen subscripciones en el año " + año + "\n");
                         return;
 
                     } else {
-                        data += "Valor de la subscripcion " + numero + "\n";
+                        data += "<center>Valor de la subscripcion " + numero + "</center>\n";
                     }
                 }
             } catch (err) {
 
             }
         }
+
+        app.post(data, urlencodeParser, function(req, res) {
+            console.log(req.body);
+            res.render(data, { qs: req.query });
+        });
+
         var num = 0
         var cont = 0
         var lis5num = []
@@ -145,8 +153,11 @@ let Datos = (datos, año, pais) => {
         }
 
         resolve(data)
+
+
     });
 };
+
 
 
 module.exports = {

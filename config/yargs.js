@@ -45,7 +45,7 @@ let optg = {
 }
 
 const argv = require('yargs')
-    .command(`publicar`, `publicará las estadísticas`, opt)
+    .command(`publicar`, `Publicará las estadísticas`, opt)
     .command(`guardar`, `Guarda los datos del pais en txt`, optg)
     .help()
     .argv;
