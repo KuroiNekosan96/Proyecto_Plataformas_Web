@@ -9,22 +9,23 @@ switch (comando) {
     case 'publicar':
         leer(argv.file).then(archivo => {
             Datos(archivo, argv.year, argv.country).then(archivo2 => {
-                const http = require('http');
-
-                const hostname = '127.0.0.2';
-                const port = 3000;
-
-                const server = http.createServer((req, res) => {
-                    res.statusCode = 200;
-                    res.setHeader('Content-Type', 'text/plain');
-                    res.end(archivo2.yellow);
+                const http = require('http'),
+                
+                fs = require('fs');
+                
+                fs.readFile('./index.html', function (err, html) {
+                    if (err) {
+                        throw err; 
+                    }       
+                    http.createServer(function(request, response) {  
+                        response.writeHeader(200, {"Content-Type": "text/html"});  
+                        response.write(html);  
+                        response.end(archivo2);  
+                    }).listen(3000);
+                    console.log('El servidor esta funcionando correctamente');
                 });
 
-                server.listen(port, hostname, () => {
-                    console.log(`Server running at http://${hostname}:${port}/`);
-                });
 
-                console.log(archivo2.yellow)
             }).catch((err) => console.log("error: ", err.red))
         }).catch((err) => console.log("error: ", err.red))
         break;
