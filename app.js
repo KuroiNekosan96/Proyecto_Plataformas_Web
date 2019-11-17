@@ -20,7 +20,8 @@ switch (comando) {
         leer(argv.file)
             .then(archivo => {
                 Datos(archivo, argv.year, argv.country).then(archivo2 => {
-                    fs.writeFile(`./archivos/${argv.country}-${argv.year}.txt`, `${archivo2}`, error => {
+
+                    fs.writeFile(`./archivos/${argv.out}-${argv.country}-${argv.year}.txt`, `${archivo2}`, error => {
                         if (error)
                             console.log(error.red);
                         else
