@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-let leer = (path) => {
+let leer = (url) => {
     return new Promise((resolve, reject) => {
-        fs.readFile(path, 'utf8', function(err, data) {
+        fs.readFile(url, 'utf8', function(err, data) {
 
             if (err) {
                 reject(err);
@@ -47,13 +47,14 @@ let Datos = (datos, año, pais) => {
 
                 if (datos3 == pais) {
                     var ta = datos2[0].length
-                    data += "Pais:\t" + datos2[0].substring(1, ta) + "\n";
                     Npa = datos2[0].substring(1, ta)
+                    data += "=============PROYECTO PLATAFORMAS WEB=============\n";
+                    data += "      =============" + Npa + "=============\n";
                     var numero = entero(datos2[pos1])
                     if (!Number(numero)) {
-                        data += "No existen subscripciones en \t" + año + "\n";
+                        data += "No existen subscripciones en el año" + año + "\n";
                     } else {
-                        data += "Numero de subscripciones:\t" + numero + "\n";
+                        data += "Valor de la subscripcion " + numero + "\n";
                     }
                 }
             } catch (err) {
@@ -99,36 +100,36 @@ let Datos = (datos, año, pais) => {
         listop5 = listop5.slice(listop5.length - 5)
 
         media = Math.round(num / cont)
-        data += "Media Mundial:\t" + media + "\n"
+        data += "Media Mundial " + media + " del año " + año + "\n"
         if (media > numero) {
-            data += "La media de mundial :\t" + media + " es mas alta que el numero de subcripciones: \t" + numero + " de " + Npa + "\n"
+            data += "La media de mundial: " + media + " es mas alta que el numero de subcripciones:" + numero + " de " + Npa + "\n"
         } else {
-            data += "El numero de subscripciones de \t" + Npa + ":" + numero + " es mas alta que la media de mundial: \t" + media + "\n"
+            data += "El numero de subscripciones de " + Npa + ": " + numero + " es mas alta que la media de mundial: " + media + "\n"
         }
-        data += "\nPAISES POR DEBAJO DE:" + numero + "\n"
+        data += "\nPaises por debajo de la media de " + Npa + "\n"
         for (key in dicnum5) {
             for (var i = 0; i < 5; i++) {
                 if (dicnum5[key] == lis5num[i]) {
-                    data += key + " : " + lis5num[i] + "\n"
+                    data += key + " con " + lis5num[i] + " suscripciones\n"
                 }
 
             }
         }
-        data += "\nPAISES POR ENCIMA DE:" + numero + "\n"
+        data += "\nPaises por encima de la media de " + Npa + "\n"
         for (key in dicnum5M) {
             for (var i = 0; i < 5; i++) {
                 if (dicnum5M[key] == lis5numM[i]) {
-                    data += key + " : " + lis5numM[i] + "\n"
+                    data += key + " con " + lis5numM[i] + " suscripciones\n"
                 }
 
             }
         }
 
-        data += "\nTOP 5 PAISES:" + año + "\n"
+        data += "\nLos 5 paises con mas suscripciones del " + año + "\n"
         for (key in dictop5) {
             for (var i = 0; i < 5; i++) {
                 if (dictop5[key] == listop5[i]) {
-                    data += key + " : " + listop5[i] + "\n"
+                    data += key + " con " + listop5[i] + " suscripciones\n"
                 }
 
             }
