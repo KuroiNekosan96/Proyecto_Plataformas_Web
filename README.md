@@ -37,21 +37,23 @@ los resultados.
 
 ## Instalación 🔧
 Ejecutar los comandos siguientes en su terminal de visual:
+* instalacion yargs
 ```
-npm install yargs (instalacion yargs)
+npm install yargs 
 ```
+* instalacion de los colores
 
 ```
-npm install colors(instalacion de los colores)
+npm install colors
 ```
+* instalacion Fs
 
 ```
-npm install file-system --save(instalacion Fs)
+npm install file-system --save
 ```
 
-```
-Descargar el documento csv de la pagina https://datos.bancomundial.org/indicador/IT.CEL.SETS
-```
+* Descargar el documento csv de la pagina https://datos.bancomundial.org/indicador/IT.CEL.SETS
+
 ## Pre-requisitos 📋
 Descomprimir el archivo zip descargado anteriormente y copiar el archivo con el nombre API_IT.CEL.SETS_DS2_es_csv_v2_485339.csv y copiar la carpeta donde clono el git
 •Nota: si desea puede cambiar el nombre del archivo .csv
