@@ -1,5 +1,5 @@
 {
-    "main": "MAIN.js",
+    "main": "app.js",
     "dependencies": {
         "body-parser": "^1.19.0",
         "chalk": "^3.0.0",
@@ -12,5 +12,21 @@
     },
     "devDependencies": {
         "nodemon": "^1.19.4"
-    }
+    },
+    "name": "proyecto_plataformas_web",
+    "description": "Esta  aplicación en NodeJS nos  permite leer los datos de las\r Suscripciones a telefonía celular móvil, publicadas por el Banco\r Mundial y publicar las estadísiticas de un determinado país en un\r año específico.",
+    "version": "1.0.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Dorival96/Proyecto_Plataformas_Web.git"
+    },
+    "author": "Wendy German, Misael Cabascango, Dorival Pichamba, Jefferson Yanqui, Diego Osorio",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Dorival96/Proyecto_Plataformas_Web/issues"
+    },
+    "homepage": "https://github.com/Dorival96/Proyecto_Plataformas_Web#readme"
 }
