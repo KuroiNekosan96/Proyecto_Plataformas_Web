@@ -56,7 +56,7 @@ npm install file-system --save
 
 ## Pre-requisitos 📋
 Descomprimir el archivo zip descargado anteriormente y copiar el archivo con el nombre API_IT.CEL.SETS_DS2_es_csv_v2_485339.csv y copiar la carpeta donde clono el git
-•Nota: si desea puede cambiar el nombre del archivo .csv
+* Nota: si desea puede cambiar el nombre del archivo .csv
 ## Para ejecutar la aplicación 🚀
 
 Puede utilizar el DATASET.csv que ya viene con el programa o hacer el paso mencionado en los pre-requisitos
